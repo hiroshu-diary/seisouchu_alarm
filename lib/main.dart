@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_lock/flutter_screen_lock.dart';
+import 'package:seisouchu_alarm/audio.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,18 +30,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _player = AudioCache();
+  final _ring = Audio(player: AudioCache());
 
   @override
   Widget build(BuildContext context) {
     return ScreenLock(
       title: const Text('パスワードを入力せよ'),
       confirmTitle: const Text('正しいパスワードを入力せよ'),
-      correctString: '1111',
+      correctString: '5308',
       canCancel: false,
       didUnlocked: () async {
-        //todo await 正解の効果音
-        await _player.play('correct.mp3');
+        _ring.correct;
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) {
@@ -52,11 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
         );
         await Future.delayed(const Duration(milliseconds: 1111));
-        _player.play('church.mp3');
+        _ring.success;
       },
-      didError: (num) async {
-        print(num);
-        await _player.play('non-correct.mp3');
+      didError: (n) async {
+        _ring.inCorrect;
         showCupertinoDialog(
             context: context,
             builder: (context) {
@@ -64,10 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 content: Text('不正解'),
               );
             });
-        await Future.delayed(const Duration(seconds: 1));
-        _player.play('attention.mp3');
-        //todo await 不正解の効果音
-        //todo ダイアログ表示
+        await Future.delayed(const Duration(milliseconds: 1111));
+        _ring.failure;
       },
     );
   }
