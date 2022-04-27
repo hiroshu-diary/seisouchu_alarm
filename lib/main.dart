@@ -2,7 +2,6 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_lock/flutter_screen_lock.dart';
-import 'package:seisouchu_alarm/audio.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +29,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _ring = Audio(player: AudioCache());
+  final _ring = AudioCache();
+
+  Future<void> play(int n) async {
+    final _soundList = [
+      'correct.mp3',
+      'success.mp3',
+      'in-correct.mp3',
+      'failure.mp3',
+    ];
+    _ring.play(_soundList[n]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       correctString: '5308',
       canCancel: false,
       didUnlocked: () async {
-        _ring.correct;
+        await play(0);
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) {
@@ -52,10 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
         );
         await Future.delayed(const Duration(milliseconds: 1111));
-        _ring.success;
+        play(1);
       },
       didError: (n) async {
-        _ring.inCorrect;
+        await play(2);
         showCupertinoDialog(
             context: context,
             builder: (context) {
@@ -64,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             });
         await Future.delayed(const Duration(milliseconds: 1111));
-        _ring.failure;
+        play(3);
       },
     );
   }
