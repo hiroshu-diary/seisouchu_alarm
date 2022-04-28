@@ -52,6 +52,7 @@ class _StartScreenState extends State<StartScreen> {
                   fontSize: 36,
                 ),
               ),
+              SizedBox(height: 20),
               Icon(
                 CupertinoIcons.arrow_down,
                 color: Colors.yellowAccent,
@@ -73,16 +74,18 @@ class _StartScreenState extends State<StartScreen> {
         buildPage('1', 1),
         buildPage('2', 2),
         buildPage('3', 3),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: CupertinoButton(
-            child: Text(
-              'パスワードを打込む',
-              style: _style,
+        Scaffold(
+          backgroundColor: Colors.black,
+          body: Center(
+            child: GestureDetector(
+              child: Text(
+                'パスワードを打込む',
+                style: _style,
+              ),
+              onTap: () {
+                Navi.blackNavi(context, const LockScreen(), 500);
+              },
             ),
-            onPressed: () {
-              Navi.blackNavi(context, const LockScreen(), 500);
-            },
           ),
         ),
       ],
