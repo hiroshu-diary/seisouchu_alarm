@@ -3,6 +3,7 @@ import 'package:flutter_screen_lock/flutter_screen_lock.dart';
 import 'package:seisouchu_alarm/screen/failure_screen.dart';
 import 'package:seisouchu_alarm/screen/success_screen.dart';
 
+import '../helper/navi.dart';
 import '../helper/sound.dart';
 
 class LockScreen extends StatefulWidget {
@@ -18,31 +19,17 @@ class _LockScreenState extends State<LockScreen> {
     return ScreenLock(
       title: const Text('パスワードを入力せよ'),
       confirmTitle: const Text('正しいパスワードを入力せよ'),
-      correctString: '5308',
+      correctString: '0000',
       canCancel: false,
       didUnlocked: () async {
         await play(0);
-        await Future.delayed(const Duration(milliseconds: 1200));
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return const SuccessScreen();
-            },
-          ),
-        );
+        await Future.delayed(const Duration(milliseconds: 1000));
+        Navi.navigate360(context, const Offset(0.5, 0), const SuccessScreen());
       },
       didError: (n) async {
         await play(2);
-        await Future.delayed(const Duration(milliseconds: 1200));
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return const FailureScreen();
-            },
-          ),
-        );
+        await Future.delayed(const Duration(milliseconds: 1000));
+        Navi.navigate360(context, const Offset(-1, 0), const FailureScreen());
       },
     );
   }
