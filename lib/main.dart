@@ -15,3 +15,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//todo ホーム画面のUI
+//todo パスワードの設定調整
+//todo ロック画面のUI
+//todo 画面遷移の調整
+//todo 成功画面のUI
+//todo 失敗画面のUI
+//todo スタッフ用最初からボタンの設置
+//todo テスト＆調整
+//todo 実機テスト

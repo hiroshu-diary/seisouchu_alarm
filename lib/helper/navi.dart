@@ -84,7 +84,7 @@ class Navi {
   }
 
   ///ホワイトアウトorブラックアウト
-  static void whiteNavi(
+  static void blackNavi(
     BuildContext context,
     Widget page,
     int length,
@@ -99,8 +99,8 @@ class Navi {
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           final color = ColorTween(
             begin: Colors.transparent,
-            // end: Colors.black, // ブラックアウト
-            end: Colors.white, // ホワイトアウト
+            end: Colors.black, // ブラックアウト
+            // end: Colors.white, // ホワイトアウト
           ).animate(CurvedAnimation(
             parent: animation,
             // 前半
