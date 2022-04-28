@@ -22,6 +22,7 @@ class _LockScreenState extends State<LockScreen> {
       canCancel: false,
       didUnlocked: () async {
         await play(0);
+        await Future.delayed(const Duration(milliseconds: 1200));
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -30,11 +31,10 @@ class _LockScreenState extends State<LockScreen> {
             },
           ),
         );
-        await Future.delayed(const Duration(milliseconds: 1111));
-        play(1);
       },
       didError: (n) async {
         await play(2);
+        await Future.delayed(const Duration(milliseconds: 1200));
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -43,8 +43,6 @@ class _LockScreenState extends State<LockScreen> {
             },
           ),
         );
-        await Future.delayed(const Duration(milliseconds: 1111));
-        play(3);
       },
     );
   }
