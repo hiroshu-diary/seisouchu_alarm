@@ -11,10 +11,11 @@ class ResetScreen extends StatelessWidget {
     return GestureDetector(
       onLongPress: () => Navi.fadeNavi(context, const StartScreen()),
       child: const Scaffold(
+        backgroundColor: Colors.black,
         body: Center(
           child: Text(
             '長押しで戻る',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 40, color: Colors.white),
           ),
         ),
       ),
