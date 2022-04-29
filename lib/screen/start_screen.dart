@@ -45,13 +45,12 @@ class _StartScreenState extends State<StartScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: const [
               Text(
-                '次へ',
+                '次へ\n',
                 style: TextStyle(
                   color: Colors.yellowAccent,
                   fontSize: 36,
                 ),
               ),
-              SizedBox(height: 20),
               Icon(
                 CupertinoIcons.arrow_down,
                 color: Colors.yellowAccent,
