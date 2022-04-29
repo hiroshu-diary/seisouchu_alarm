@@ -20,7 +20,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
         child: Text('ミッション成功！'),
       ),
       floatingActionButton: TextButton(
-        child: const Text('   '),
+        child: const Text('   \n　　\n　　'),
         onPressed: () {},
         onLongPress: () {
           Navi.fadeNavi(context, const ResetScreen());

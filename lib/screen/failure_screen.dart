@@ -14,7 +14,7 @@ class FailureScreen extends StatelessWidget {
         child: Text('ミッション失敗...'),
       ),
       floatingActionButton: TextButton(
-        child: const Text('   '),
+        child: const Text('   \n　　\n　　'),
         onPressed: () {},
         onLongPress: () {
           Navi.fadeNavi(context, const ResetScreen());

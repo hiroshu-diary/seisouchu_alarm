@@ -69,9 +69,14 @@ class _StartScreenState extends State<StartScreen> {
       controller: _controller,
       scrollDirection: Axis.vertical,
       children: [
-        buildPage('1', 1),
-        buildPage('2', 2),
-        buildPage('3', 3),
+        buildPage(
+          'ハンターの護衛を避けるには、\nパスワードを打ち込まなければ\nならない。',
+          1,
+        ),
+        buildPage(
+          '2',
+          2,
+        ),
         Scaffold(
           backgroundColor: Colors.black,
           body: Center(
