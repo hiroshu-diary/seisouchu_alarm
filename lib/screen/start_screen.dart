@@ -33,7 +33,6 @@ class _StartScreenState extends State<StartScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: GestureDetector(
-        behavior: HitTestBehavior.opaque,
         onTap: () {
           _controller.nextPage(
             duration: const Duration(milliseconds: 300),
@@ -41,7 +40,7 @@ class _StartScreenState extends State<StartScreen> {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: const [
