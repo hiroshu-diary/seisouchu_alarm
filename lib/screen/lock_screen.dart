@@ -14,8 +14,8 @@ class LockScreen extends StatefulWidget {
 }
 
 class _LockScreenState extends State<LockScreen> {
-  static const String _correctString = '0000';
   static const int _tryNum = 3;
+  static const String _correctString = '0000';
   static const String _title = 'パスワードを入力せよ！';
   static const TextStyle _titleStyle = TextStyle(
     fontSize: 40.0,
