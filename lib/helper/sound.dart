@@ -4,7 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 final ring = AudioCache();
 
 Future<void> delay() async {
-  Future.delayed(const Duration(milliseconds: 700));
+  Future.delayed(const Duration(milliseconds: 1000));
 }
 
 Future<void> play(int n) async {

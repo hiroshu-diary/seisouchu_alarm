@@ -19,9 +19,11 @@ class _SuccessScreenState extends State<SuccessScreen> {
       backgroundColor: Colors.black,
       body: const Center(
         child: Text(
-          'ミッション成功！',
+          '60秒間だけ、\nハンターが機能を停止する。'
+          '\nこの時間に逮捕状をゲットせよ',
+          textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.blueAccent,
+            color: Colors.yellowAccent,
             fontSize: 40,
           ),
         ),

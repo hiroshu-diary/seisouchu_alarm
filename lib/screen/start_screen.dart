@@ -87,7 +87,7 @@ class _StartScreenState extends State<StartScreen> {
           2,
           Center(
             child: Text(
-              'この奥の宝箱に逮捕状がある。\n\n\nしかし、\n\nハンターがこれを護衛している。',
+              'この奥の宝箱に逮捕状がある。\n\n\nしかし、\nハンターがこれを護衛している。',
               style: _style,
               textAlign: TextAlign.center,
             ),
@@ -105,7 +105,7 @@ class _StartScreenState extends State<StartScreen> {
         Scaffold(
           backgroundColor: Colors.black,
           body: GestureDetector(
-            behavior: HitTestBehavior.opaque,
+            behavior: HitTestBehavior.deferToChild,
             onTap: () {
               Navi.blackNavi(context, const LockScreen(), 500);
             },
