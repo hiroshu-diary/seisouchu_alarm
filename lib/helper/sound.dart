@@ -10,10 +10,10 @@ Future<void> delay() async {
 Future<void> play(int n) async {
   final _soundList = [
     //正解：0
-    'correct.mp3',
+    'light_unlock.mp3',
 
     //ミッション成功：1
-    'success.mp3',
+    'stop_hunter.mp3',
 
     //不正解：2
     'in-correct.mp3',

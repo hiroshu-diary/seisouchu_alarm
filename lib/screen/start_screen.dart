@@ -18,7 +18,7 @@ class _StartScreenState extends State<StartScreen> {
   final _style = const TextStyle(
     fontSize: 40,
     fontWeight: FontWeight.w600,
-    color: Colors.white,
+    color: Colors.yellowAccent,
   );
   Scaffold buildPage(int nextPage, Widget body) {
     return Scaffold(
@@ -105,13 +105,24 @@ class _StartScreenState extends State<StartScreen> {
         Scaffold(
           backgroundColor: Colors.black,
           body: GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onTap: () {
               Navi.blackNavi(context, const LockScreen(), 500);
             },
             child: Center(
-              child: Text(
-                'パスワードを打込む',
-                style: _style,
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    width: 4.0,
+                    color: Colors.yellowAccent,
+                  ),
+                ),
+                child: Text(
+                  'パスワードを打込む',
+                  style: _style,
+                ),
               ),
             ),
           ),
