@@ -10,8 +10,15 @@ class FailureScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     enterAudio(false);
     return Scaffold(
+      backgroundColor: Colors.black,
       body: const Center(
-        child: Text('ミッション失敗...'),
+        child: Text(
+          'ミッション失敗...',
+          style: TextStyle(
+            color: Colors.redAccent,
+            fontSize: 40,
+          ),
+        ),
       ),
       floatingActionButton: TextButton(
         child: const Text('   \n　　\n　　'),

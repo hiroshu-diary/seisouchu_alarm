@@ -26,7 +26,7 @@ class _LockScreenState extends State<LockScreen> {
   @override
   Widget build(BuildContext context) {
     return ScreenLock(
-      canCancel: false,
+      canCancel: true,
       maxRetries: _tryNum,
       correctString: _correctString,
       title: const Text(_title, style: _titleStyle),

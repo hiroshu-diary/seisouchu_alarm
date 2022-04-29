@@ -18,19 +18,12 @@ class _StartScreenState extends State<StartScreen> {
   final _style = const TextStyle(
     fontSize: 40,
     fontWeight: FontWeight.w600,
-    color: Colors.yellowAccent,
+    color: Colors.white,
   );
-  Scaffold buildPage(String text, int nextPage) {
+  Scaffold buildPage(int nextPage, Widget body) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(text, style: _style),
-          ],
-        ),
-      ),
+      body: body,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: GestureDetector(
         onTap: () {
@@ -47,13 +40,13 @@ class _StartScreenState extends State<StartScreen> {
               Text(
                 '次へ\n',
                 style: TextStyle(
-                  color: Colors.yellowAccent,
+                  color: Colors.white,
                   fontSize: 36,
                 ),
               ),
               Icon(
                 CupertinoIcons.arrow_down,
-                color: Colors.yellowAccent,
+                color: Colors.white,
                 size: 36,
               ),
             ],
@@ -70,24 +63,56 @@ class _StartScreenState extends State<StartScreen> {
       scrollDirection: Axis.vertical,
       children: [
         buildPage(
-          'ハンターの護衛を避けるには、\nパスワードを打ち込まなければ\nならない。',
           1,
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logo.png',
+                  width: 600,
+                ),
+                Container(
+                  height: 50,
+                ),
+                Text(
+                  'ハンターから逮捕状を奪え！',
+                  style: _style,
+                )
+              ],
+            ),
+          ),
         ),
         buildPage(
-          '2',
           2,
+          Center(
+            child: Text(
+              'この奥の宝箱に逮捕状がある。\n\n\nしかし、\n\nハンターがこれを護衛している。',
+              style: _style,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+        buildPage(
+          3,
+          Center(
+            child: Text(
+              'ハンターの護衛を避けるには、\nパスワードを打ち込まなければ\nならない...',
+              style: _style,
+            ),
+          ),
         ),
         Scaffold(
           backgroundColor: Colors.black,
-          body: Center(
-            child: GestureDetector(
+          body: GestureDetector(
+            onTap: () {
+              Navi.blackNavi(context, const LockScreen(), 500);
+            },
+            child: Center(
               child: Text(
                 'パスワードを打込む',
                 style: _style,
               ),
-              onTap: () {
-                Navi.blackNavi(context, const LockScreen(), 500);
-              },
             ),
           ),
         ),

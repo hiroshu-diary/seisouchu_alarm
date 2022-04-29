@@ -16,8 +16,15 @@ class _SuccessScreenState extends State<SuccessScreen> {
   Widget build(BuildContext context) {
     enterAudio(true);
     return Scaffold(
+      backgroundColor: Colors.black,
       body: const Center(
-        child: Text('ミッション成功！'),
+        child: Text(
+          'ミッション成功！',
+          style: TextStyle(
+            color: Colors.blueAccent,
+            fontSize: 40,
+          ),
+        ),
       ),
       floatingActionButton: TextButton(
         child: const Text('   \n　　\n　　'),
