@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:seisouchu_alarm/helper/navi.dart';
-import 'package:seisouchu_alarm/helper/sound.dart';
 import 'package:seisouchu_alarm/screen/reset_screen.dart';
 
-class FailureScreen extends StatelessWidget {
+import '../helper/navi.dart';
+import '../helper/sound.dart';
+
+class FailureScreen extends StatefulWidget {
   const FailureScreen({Key? key}) : super(key: key);
 
   @override
+  State<FailureScreen> createState() => _FailureScreenState();
+}
+
+class _FailureScreenState extends State<FailureScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Init.action(context, false);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    enterAudio(false);
     return Scaffold(
       backgroundColor: Colors.black,
       body: const Center(
         child: Text(
-          'ミッション失敗...',
+          'ハンター警戒モード・ON',
+          textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.redAccent,
+            color: Colors.yellowAccent,
             fontSize: 40,
           ),
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:seisouchu_alarm/helper/sound.dart';
 import 'package:seisouchu_alarm/screen/reset_screen.dart';
 
 import '../helper/navi.dart';
+import '../helper/sound.dart';
 
 class SuccessScreen extends StatefulWidget {
   const SuccessScreen({Key? key}) : super(key: key);
@@ -13,8 +13,13 @@ class SuccessScreen extends StatefulWidget {
 
 class _SuccessScreenState extends State<SuccessScreen> {
   @override
+  void initState() {
+    super.initState();
+    Init.action(context, true);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    enterAudio(true);
     return Scaffold(
       backgroundColor: Colors.black,
       body: const Center(

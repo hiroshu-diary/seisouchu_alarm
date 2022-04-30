@@ -41,13 +41,14 @@ class _StartScreenState extends State<StartScreen> {
                 '次へ\n',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 36,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Icon(
                 CupertinoIcons.arrow_down,
                 color: Colors.white,
-                size: 36,
+                size: 32,
               ),
             ],
           ),
@@ -72,9 +73,7 @@ class _StartScreenState extends State<StartScreen> {
                   'assets/logo.png',
                   width: 600,
                 ),
-                Container(
-                  height: 50,
-                ),
+                const SizedBox(height: 40),
                 Text(
                   'ハンターから逮捕状を奪え！',
                   style: _style,

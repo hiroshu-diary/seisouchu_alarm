@@ -46,7 +46,7 @@ class _LockScreenState extends State<LockScreen> {
       ),
       didUnlocked: () async {
         await play(0);
-        await Future.delayed(const Duration(milliseconds: 1200));
+        await Future.delayed(const Duration(milliseconds: 1000));
         Navi.navigate360(context, const Offset(0.5, 0), const SuccessScreen());
       },
       didError: (n) {
@@ -70,11 +70,12 @@ class _LockScreenState extends State<LockScreen> {
               );
             },
           );
+          play(2);
         }
       },
       didMaxRetries: (n) async {
         await play(2);
-        await Future.delayed(const Duration(milliseconds: 1200));
+        await Future.delayed(const Duration(milliseconds: 1300));
         Navi.navigate360(context, const Offset(-1, 0), const FailureScreen());
       },
     );
