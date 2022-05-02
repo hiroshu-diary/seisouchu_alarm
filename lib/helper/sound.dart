@@ -40,7 +40,7 @@ void enterAudio(bool isSuccess) async {
 class Init {
   static void action(BuildContext context, bool isSuccess) async {
     enterAudio(isSuccess);
-    await Future.delayed(const Duration(seconds: 60));
+    await Future.delayed(const Duration(seconds: 22));
     Navi.fadeNavi(context, const StartScreen());
     await Future.delayed(const Duration(seconds: 1));
     play(4);
