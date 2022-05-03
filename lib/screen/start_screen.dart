@@ -73,11 +73,7 @@ class _StartScreenState extends State<StartScreen> {
                   'assets/logo.png',
                   width: 600,
                 ),
-                const SizedBox(height: 40),
-                Text(
-                  'ハンターから逮捕状を奪え！',
-                  style: _style,
-                )
+                Text('ハンター起動中！', style: _style),
               ],
             ),
           ),
@@ -86,7 +82,7 @@ class _StartScreenState extends State<StartScreen> {
           2,
           Center(
             child: Text(
-              'この奥の宝箱に逮捕状がある。\n\n\nしかし、\nハンターがこれを護衛している。',
+              'この奥の宝箱に逮捕状が隠してある。',
               style: _style,
               textAlign: TextAlign.center,
             ),
@@ -96,7 +92,7 @@ class _StartScreenState extends State<StartScreen> {
           3,
           Center(
             child: Text(
-              'ハンターの護衛を避けるには、\nパスワードを打ち込まなければ\nならない...',
+              'ハンターの護衛を避けるために.\nパスワードを入力せよ',
               style: _style,
             ),
           ),
@@ -119,7 +115,7 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                 ),
                 child: Text(
-                  'パスワードを打込む',
+                  'パスワードを入力して\nハンターを40秒停止する',
                   style: _style,
                 ),
               ),

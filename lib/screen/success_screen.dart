@@ -22,16 +22,8 @@ class _SuccessScreenState extends State<SuccessScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: const Center(
-        child: Text(
-          '60秒間だけ、\nハンターが機能を停止する。'
-          '\nこの時間に逮捕状をゲットせよ',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.yellowAccent,
-            fontSize: 40,
-          ),
-        ),
+      body: Center(
+        child: Image.asset('assets/ss.png', width: 640),
       ),
       floatingActionButton: TextButton(
         child: const Text('   \n　　\n　　'),

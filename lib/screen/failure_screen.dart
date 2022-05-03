@@ -22,15 +22,8 @@ class _FailureScreenState extends State<FailureScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: const Center(
-        child: Text(
-          'ハンター警戒モード・ON',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.yellowAccent,
-            fontSize: 40,
-          ),
-        ),
+      body: Center(
+        child: Image.asset('assets/ff.png', width: 640),
       ),
       floatingActionButton: TextButton(
         child: const Text('   \n　　\n　　'),
