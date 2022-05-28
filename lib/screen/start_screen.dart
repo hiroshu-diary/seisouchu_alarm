@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../helper/navi.dart';
@@ -16,7 +15,7 @@ class _StartScreenState extends State<StartScreen> {
     initialPage: 0,
   );
   final _style = const TextStyle(
-    fontSize: 40,
+    fontSize: 52,
     fontWeight: FontWeight.w600,
     color: Colors.yellowAccent,
   );
@@ -24,35 +23,47 @@ class _StartScreenState extends State<StartScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: body,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: GestureDetector(
-        onTap: () {
-          _controller.nextPage(
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeInOut,
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
-              Text(
-                '次へ\n',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Icon(
-                CupertinoIcons.arrow_down,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          MaterialButton(
+            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 60),
+            child: const Text(
+              '前へ',
+              style: TextStyle(
                 color: Colors.white,
-                size: 32,
+                fontSize: 44,
+                fontWeight: FontWeight.bold,
               ),
-            ],
+            ),
+            textColor: Colors.white,
+            onPressed: () {
+              _controller.previousPage(
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeInOut,
+              );
+            },
           ),
-        ),
+          MaterialButton(
+            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 60),
+            child: const Text(
+              '次へ',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 44,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            textColor: Colors.white,
+            onPressed: () {
+              _controller.nextPage(
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeInOut,
+              );
+            },
+          ),
+        ],
       ),
     );
   }
@@ -71,9 +82,15 @@ class _StartScreenState extends State<StartScreen> {
               children: [
                 Image.asset(
                   'assets/logo.png',
-                  width: 600,
+                  width: 240,
                 ),
-                Text('ハンター起動中！', style: _style),
+                const SizedBox(height: 48),
+                Text(
+                  'ハンターの動きを止めて、\n'
+                  '宝箱にある逮捕状をゲットしよう！！',
+                  style: _style,
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
           ),
@@ -81,45 +98,79 @@ class _StartScreenState extends State<StartScreen> {
         buildPage(
           2,
           Center(
-            child: Text(
-              'この奥の宝箱に逮捕状が隠してある。',
-              style: _style,
-              textAlign: TextAlign.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logo.png',
+                  width: 240,
+                ),
+                const SizedBox(height: 48),
+                Text(
+                  'LINEの問題から導かれる\n４桁のパスワードを入力すると\nハンターが30秒間停止する',
+                  style: _style,
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ),
         buildPage(
           3,
           Center(
-            child: Text(
-              'ハンターの護衛を避けるために.\nパスワードを入力せよ',
-              style: _style,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logo.png',
+                  width: 240,
+                ),
+                const SizedBox(height: 48),
+                Text(
+                  'この間に逮捕状をゲットして、\n'
+                  '急いで警察に届けよう！',
+                  style: _style,
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         ),
         Scaffold(
           backgroundColor: Colors.black,
-          body: GestureDetector(
-            behavior: HitTestBehavior.deferToChild,
-            onTap: () {
-              Navi.blackNavi(context, const LockScreen(), 500);
-            },
-            child: Center(
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    width: 4.0,
-                    color: Colors.yellowAccent,
-                  ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logo.png',
+                  width: 240,
                 ),
-                child: Text(
-                  'パスワードを入力して\nハンターを30秒停止する',
+                const SizedBox(height: 48),
+                Text(
+                  '逮捕状を取った後に、\n'
+                  'ハンターが目覚めるかもしなない...',
                   style: _style,
+                  textAlign: TextAlign.center,
                 ),
+              ],
+            ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          floatingActionButton: MaterialButton(
+            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 50),
+            child: const Text(
+              'パスワードを入力',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 44,
+                fontWeight: FontWeight.bold,
               ),
             ),
+            textColor: Colors.white,
+            onPressed: () {
+              Navi.blackNavi(context, const LockScreen(), 500);
+            },
           ),
         ),
       ],

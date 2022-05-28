@@ -27,6 +27,15 @@ Future<void> play(int n) async {
 
     //ハンター起動：４
     'start_hunter.mp3',
+
+    //30-21秒：５
+    'mini-p.mp3',
+
+    //20-1秒：６
+    'normal-p.mp3',
+
+    //再起動；７
+    'restart.mp3'
   ];
   ring.play(_soundList[n]);
 }

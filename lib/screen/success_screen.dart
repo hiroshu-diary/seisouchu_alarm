@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../helper/sound.dart';
@@ -10,10 +12,20 @@ class SuccessScreen extends StatefulWidget {
 }
 
 class _SuccessScreenState extends State<SuccessScreen> {
+  int _counter = 30;
   @override
   void initState() {
     super.initState();
     Init.action(context, true);
+    Timer.periodic(
+      // 第一引数：繰り返す間隔の時間を設定
+      const Duration(seconds: 1),
+      // 第二引数：その間隔ごとに動作させたい処理を書く
+      (Timer timer) {
+        _counter--;
+        setState(() {});
+      },
+    );
   }
 
   @override
@@ -21,7 +33,50 @@ class _SuccessScreenState extends State<SuccessScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: Image.asset('assets/ss.png', width: 640),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'パスワード解除成功！',
+              style: TextStyle(
+                fontSize: 80,
+                fontWeight: FontWeight.bold,
+                color: Colors.yellowAccent,
+              ),
+            ),
+            const SizedBox(height: 15),
+            const Text(
+              '宝箱の中の逮捕状をゲットして、\n急いで警察官に届けよう！',
+              style: TextStyle(
+                fontSize: 60,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 100),
+            const Text(
+              'ハンターが再起動するまであと',
+              style: TextStyle(
+                fontSize: 60,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            GestureDetector(
+              onLongPress: () {
+                play(7);
+              },
+              child: Text(
+                '$_counter 秒',
+                style: TextStyle(
+                  fontSize: 200,
+                  fontWeight: FontWeight.bold,
+                  color: _counter > 26 ? Colors.blueAccent : Colors.redAccent,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
