@@ -49,36 +49,65 @@ class _LockScreenState extends State<LockScreen> {
       },
       didError: (n) {
         print(n);
-        showDialog(
-          context: context,
-          builder: (context) {
-            String hintText = '';
-            if (n == 1) {
-              hintText = 'パスワード解除失敗！\n左の図の順に、右の図をなぞってみよう';
-            } else if (n == 2) {
-              hintText = 'パスワード解除失敗！\n\nヒント１：\nはじめの数字は\n『２』';
-            } else if (n == 3) {
-              hintText = 'パスワード解除失敗！\n\nヒント２：\nはじめの２桁は\n『２０』';
-            } else {
-              hintText = 'パスワード解除失敗！\n\nスーパーヒント：\nはじめの3桁は\n『２０５』';
-            }
-            return AlertDialog(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              insetPadding: const EdgeInsets.all(24.0),
-              title: Text(
-                hintText,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.red,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
+        if (n == 1) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                  insetPadding: const EdgeInsets.all(24.0),
+                  content: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text(
+                        'ヒント１：左の丸の順番で\n'
+                        '右の数字板をなぞってみよう！',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Image.asset('assets/quiz-z.png', height: 440),
+                    ],
+                  ),
+                );
+              });
+        } else {
+          showDialog(
+            context: context,
+            builder: (context) {
+              String hintText = '';
+              if (n == 1) {
+                hintText = 'パスワード解除失敗！\n左の図の順に、右の図をなぞってみよう';
+              } else if (n == 2) {
+                hintText = 'パスワード解除失敗！\n\nヒント２：\nはじめの数字は\n『２』';
+              } else if (n == 3) {
+                hintText = 'パスワード解除失敗！\n\nヒント３：\nはじめの２桁は\n『２０』';
+              } else {
+                hintText = 'パスワード解除失敗！\n\nスーパーヒント：\nはじめの3桁は\n『２０５』';
+              }
+              return AlertDialog(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
                 ),
-              ),
-            );
-          },
-        );
+                insetPadding: const EdgeInsets.all(24.0),
+                title: Text(
+                  hintText,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.red,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              );
+            },
+          );
+        }
+
         play(2);
       },
     );

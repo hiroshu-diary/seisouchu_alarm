@@ -40,7 +40,7 @@ class _StartScreenState extends State<StartScreen> {
             textColor: Colors.white,
             onPressed: () {
               _controller.previousPage(
-                duration: const Duration(milliseconds: 400),
+                duration: const Duration(milliseconds: 500),
                 curve: Curves.easeInOut,
               );
             },
@@ -58,7 +58,7 @@ class _StartScreenState extends State<StartScreen> {
             textColor: Colors.white,
             onPressed: () {
               _controller.nextPage(
-                duration: const Duration(milliseconds: 400),
+                duration: const Duration(milliseconds: 500),
                 curve: Curves.easeInOut,
               );
             },
