@@ -115,7 +115,7 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                 ),
                 child: Text(
-                  'パスワードを入力して\nハンターを40秒停止する',
+                  'パスワードを入力して\nハンターを30秒停止する',
                   style: _style,
                 ),
               ),
