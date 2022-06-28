@@ -48,7 +48,6 @@ class _LockScreenState extends State<LockScreen> {
         Navi.navigate360(context, const Offset(0.5, 0), const SuccessScreen());
       },
       didError: (n) {
-        print(n);
         String hintText = '';
 
         if (n == 1) {

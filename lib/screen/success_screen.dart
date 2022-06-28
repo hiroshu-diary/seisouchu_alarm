@@ -16,7 +16,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
   @override
   void initState() {
     super.initState();
-    Init.action(context, true);
+    Init.action(context);
     Timer.periodic(
       // 第一引数：繰り返す間隔の時間を設定
       const Duration(seconds: 1),
@@ -46,7 +46,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
             ),
             const SizedBox(height: 15),
             const Text(
-              '宝箱の中の逮捕状をゲットして、\n急いで警察官に届けよう！',
+              '宝箱をゲットして、\n急いで警察官に届けよう！',
               style: TextStyle(
                 fontSize: 60,
                 fontWeight: FontWeight.bold,
@@ -64,7 +64,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
             ),
             GestureDetector(
               onLongPress: () {
-                play(7);
+                play(3);
               },
               child: Text(
                 '$_counter 秒',

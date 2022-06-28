@@ -127,7 +127,7 @@ class _StartScreenState extends State<StartScreen> {
                 ),
                 const SizedBox(height: 48),
                 Text(
-                  'この間に逮捕状をゲットして、\n'
+                  'この間に宝箱をゲットして、\n'
                   '急いで警察に届けよう！',
                   style: _style,
                   textAlign: TextAlign.center,
@@ -148,7 +148,7 @@ class _StartScreenState extends State<StartScreen> {
                 ),
                 const SizedBox(height: 48),
                 Text(
-                  '逮捕状を取った後に、\n'
+                  '宝箱にふれると、\n'
                   'ハンターが目覚めるかもしなない...',
                   style: _style,
                   textAlign: TextAlign.center,

@@ -13,42 +13,28 @@ Future<void> delay() async {
 
 Future<void> play(int n) async {
   final _soundList = [
-    //正解：0
+    //解錠：0
     'light_unlock.mp3',
 
-    //ハンター停止：1
+    //ハンター停止：１
     'stop_hunter.mp3',
 
-    //不正解：2
+    //不正解：２
     'in-correct.mp3',
 
-    //ミッション失敗：３
-    'failure.mp3',
+    //警告；３
+    'restart.mp3',
 
     //ハンター起動：４
     'start_hunter.mp3',
-
-    //30-21秒：５
-    'mini-p.mp3',
-
-    //20-1秒：６
-    'normal-p.mp3',
-
-    //再起動；７
-    'restart.mp3'
   ];
   ring.play(_soundList[n]);
 }
 
-void enterAudio(bool isSuccess) async {
-  int num = isSuccess ? 1 : 3;
-  await delay();
-  play(num);
-}
-
 class Init {
-  static void action(BuildContext context, bool isSuccess) async {
-    enterAudio(isSuccess);
+  static void action(BuildContext context) async {
+    await delay();
+    play(1);
     await Future.delayed(const Duration(seconds: 30));
     Navi.fadeNavi(context, const StartScreen());
     await Future.delayed(const Duration(seconds: 1));
