@@ -46,7 +46,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
             ),
             const SizedBox(height: 15),
             const Text(
-              '宝箱をゲットして、\n急いで警察官に届けよう！',
+              '宝箱をゲットして、\n急いで武田信玄に届けよう！',
               style: TextStyle(
                 fontSize: 60,
                 fontWeight: FontWeight.bold,
