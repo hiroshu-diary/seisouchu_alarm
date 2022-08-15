@@ -12,7 +12,7 @@ class SuccessScreen extends StatefulWidget {
 }
 
 class _SuccessScreenState extends State<SuccessScreen> {
-  int _counter = 30;
+  int _counter = 15;
   @override
   void initState() {
     super.initState();
@@ -46,7 +46,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
             ),
             const SizedBox(height: 15),
             const Text(
-              '宝箱をゲットして、\n急いで武田信玄に届けよう！',
+              '宝箱をゲットして、\n急いで警察官に届けよう！',
               style: TextStyle(
                 fontSize: 60,
                 fontWeight: FontWeight.bold,
@@ -69,9 +69,9 @@ class _SuccessScreenState extends State<SuccessScreen> {
               child: Text(
                 '$_counter 秒',
                 style: TextStyle(
-                  fontSize: 200,
+                  fontSize: _counter > 9 ? 160 : 200,
                   fontWeight: FontWeight.bold,
-                  color: _counter > 26 ? Colors.blueAccent : Colors.redAccent,
+                  color: _counter > 9 ? Colors.blueAccent : Colors.redAccent,
                 ),
               ),
             ),

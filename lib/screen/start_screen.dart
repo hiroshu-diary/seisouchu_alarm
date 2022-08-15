@@ -107,7 +107,7 @@ class _StartScreenState extends State<StartScreen> {
                 ),
                 const SizedBox(height: 48),
                 Text(
-                  'LINEの問題から導かれる\n４桁のパスワードを入力すると\nハンターが30秒間停止する',
+                  'LINEの問題から導かれる\n４桁のパスワードを入力すると\nハンターが15秒間停止する',
                   style: _style,
                   textAlign: TextAlign.center,
                 ),
@@ -128,7 +128,7 @@ class _StartScreenState extends State<StartScreen> {
                 const SizedBox(height: 48),
                 Text(
                   'この間に宝箱をゲットして、\n'
-                  '急いで武田信玄に届けよう！',
+                  '急いで警察官に届けよう！',
                   style: _style,
                   textAlign: TextAlign.center,
                 ),
