@@ -55,7 +55,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
             ),
             const SizedBox(height: 100),
             const Text(
-              'ハンターが再起動するまであと',
+              'ハンター再起動まで、あと',
               style: TextStyle(
                 fontSize: 60,
                 fontWeight: FontWeight.bold,
@@ -69,7 +69,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
               child: Text(
                 '$_counter 秒',
                 style: TextStyle(
-                  fontSize: _counter > 9 ? 160 : 200,
+                  fontSize: _counter > 9 ? 172 : 200,
                   fontWeight: FontWeight.bold,
                   color: _counter > 9 ? Colors.blueAccent : Colors.redAccent,
                 ),
