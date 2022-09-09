@@ -35,7 +35,7 @@ class Init {
   static void action(BuildContext context) async {
     await delay();
     play(1);
-    await Future.delayed(const Duration(seconds: 30));
+    await Future.delayed(const Duration(seconds: 15));
     Navi.fadeNavi(context, const StartScreen());
     await Future.delayed(const Duration(seconds: 1));
     play(4);

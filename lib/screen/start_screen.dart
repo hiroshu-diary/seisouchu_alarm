@@ -107,7 +107,7 @@ class _StartScreenState extends State<StartScreen> {
                 ),
                 const SizedBox(height: 48),
                 Text(
-                  'LINEの問題から導かれる\n４桁のパスワードを入力すると\nハンターが15秒間停止する',
+                  'ミッションカードから導かれる\n４桁のパスワードを入力すると\nハンターが15秒間停止する',
                   style: _style,
                   textAlign: TextAlign.center,
                 ),
